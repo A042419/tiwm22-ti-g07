@@ -3,6 +3,8 @@ body{background-image: url("imagem\ de\ fundo.png");
     color:white;
     background-attachment: scroll;
     text-align: center;
+    orientation:auto;
+    grid: 0;
 }
 
 ul{
