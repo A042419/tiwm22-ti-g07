@@ -28,6 +28,10 @@ s{
     visibility: hidden;
 }
 
+figcaption{
+    visibility: hidden;
+}
+
 n{
     display: inline-block;
     text-align: left;
