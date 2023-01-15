@@ -1,0 +1,55 @@
+h1{background: rgb(88, 226, 54);
+    color: black;
+    padding: 5px 5px 5px 15px;
+    border-style: double;
+    border-width: thick;
+    border-color: white;
+}
+
+img{max-width:500px;
+    max-height:450px;
+    width: auto;
+    height: auto;
+    padding: 5px 5px 5px 5px;
+    border-style: solid;
+    border-width: thick;
+    border-color: white;
+}
+
+ul{padding: 10px 20px 10px 10px;
+    border-style: solid;
+    border-width: medium;
+    border-color: white;
+    margin: 5px 0px 0px 0px
+}
+
+ol{background:rgba(79, 83, 77, 0.699);
+    padding: 10px 20px 10px 10px;
+    border-style: solid;
+    border-width: medium;
+    border-color: white;
+}
+
+h2{background: rgb(88, 226, 54, 0.726);
+    color: black;
+    padding: 5px 5px 5px 5px;
+    border-style: double;
+    border-width: medium;
+    border-color: white
+}
+
+h3{color: white;
+    padding: 5px 5px 5px 5px;
+    border-style: double;
+    border-width: medium;
+    border-color: white
+}
+
+form{
+    padding: 5px 5px 5px 5px;
+    border-style: dotted;
+}
+
+table{
+    color: white
+}
