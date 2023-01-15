@@ -36,3 +36,11 @@ n{
     display: inline-block;
     text-align: left;
 }
+
+table{
+    border:white solid;
+	width:550px;
+	padding:0px;
+	font-size:25px;
+	border-collapse:collapse;
+}
