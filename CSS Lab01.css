@@ -1,0 +1,34 @@
+body{background-image: url("imagem\ de\ fundo.png");
+    background-color: black;
+    color:white;
+    background-attachment: scroll;
+    text-align: center;
+}
+
+ul{
+    list-style-position: inside;
+    text-align: center;
+    color:white
+}
+
+ol{
+    list-style:none;
+}
+
+a{
+    color: rgb(88, 226, 54);
+}
+
+form{
+    display: inline-block;
+    text-align: right;
+}
+
+s{
+    visibility: hidden;
+}
+
+n{
+    display: inline-block;
+    text-align: left;
+}
