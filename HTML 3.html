@@ -30,45 +30,53 @@
         <p>
             Os mamíferos são animais vertebrados e estão divididos em dois grupos, os aquáticos e os terrestres.
         </p>
-
-        <table style="border-color: white;border-width: thin;border-style: solid;">
-            <thead>
-                <tr>
-                    <td colspan="2" style="border:thin solid white" style="text-align: center"><strong><h3>Cientificamente, os mamíferos são classificados da seguinte maneira:</h3></strong></td>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td style="border:thin solid white"><strong>Domínio</strong></td>
-                    <td style="border:thin solid white">Eukaryota</td>
-                </tr>
-                <tr>
-                    <td style="border:thin solid white"><strong>Reino</strong></td>
-                    <td style="border:thin solid white">Animalia</td>
-                </tr>
-                <tr>
-                    <td style="border:thin solid white"><strong>Filo</strong></td>
-                    <td style="border:thin solid white">Chordata</td>
-                </tr>
-                <tr>
-                    <td style="border:thin solid white"><strong>Subfilo</strong></td>
-                    <td style="border:thin solid white">Vertebrata</td>
-                </tr>
-                <tr>
-                    <td style="border:thin solid white"><strong>Superclasse</strong></td>
-                    <td style="border:thin solid white">Tetrapoda</td>
-                </tr>
-                <tr>
-                    <td style="border:thin solid white"><strong>Classe</strong></td>
-                    <td style="border:thin solid white">Synapsida</td>
-                </tr>
-                <tr>
-                    <td style="border:thin solid white"><strong>Subclasse</strong></td>
-                    <td style="border:thin solid white">Mammalia</td>
-                </tr>
-            </tbody>
+        <p>
+            Cientificamente, os mamíferos são classificados da seguinte forma:
+        </p>
+        <table id="MainTable">  
+            <tbody id="BodyRows"></tbody>
         </table>
+        <script>
+            window.addEventListener("load", function() {
+                getRows();
+            });
+        
+            function getRows() {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("get", "tabela.xml", true);
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        showResult(this);
+                    }
+                };
+                xmlhttp.send(null);
+            }
+            function showResult(xmlhttp) {
+                var xmlDoc = xmlhttp.responseXML.documentElement;
+                var outputResult = document.getElementById("BodyRows");
+                var rowData = xmlDoc.getElementsByTagName("cientificamente");
+                addTableRowsFromXmlDoc(rowData,outputResult);
+            }
+            function addTableRowsFromXmlDoc(xmlNodes,tableNode) {
+                var theTable = tableNode.parentNode;
+                var newRow, newCell, i;
+                console.log ("Number of nodes: " + xmlNodes.length);
+                for (i=0; i<xmlNodes.length; i++) {
+                    newRow = tableNode.insertRow(i);
+                    newRow.className = (i%2) ? "OddRow" : "EvenRow";
+                    for (j=0; j<xmlNodes[i].childNodes.length; j++) {
+                        newCell = newRow.insertCell(newRow.cells.length);
+                        if (xmlNodes[i].childNodes[j].firstChild) {
+                            newCell.innerHTML = xmlNodes[i].childNodes[j].firstChild.nodeValue;
+                        } else {
+                            newCell.innerHTML = "-";
+                        }
+                        console.log("cell: " + newCell);
+                    }
+                }
+                theTable.appendChild(tableNode);
+            }
+        </script>   
         <hr>
         <p>
             <h2 id="Características">
