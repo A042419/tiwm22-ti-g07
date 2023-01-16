@@ -46,3 +46,17 @@ table{
 	font-size: 25px;
 	border-collapse: collapse;
 }
+
+.tooltip .tooltiptext{
+    visibility: hidden;
+    width: 120px;;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+}
+
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+    opacity: 1;
+}
